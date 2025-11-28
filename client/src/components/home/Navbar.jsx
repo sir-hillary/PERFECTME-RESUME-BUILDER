@@ -109,7 +109,7 @@ const Navbar = () => {
                 onClick={() => setDropdownOpen(!dropdownOpen)}
                 className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-50 transition-all border border-gray-200"
               >
-                <div className="w-8 h-8 flex justify-center items-center rounded-full bg-gradient-to-br from-green-500 to-green-600 text-white font-medium shadow-sm">
+                <div className="w-8 h-8 flex justify-center items-center rounded-full bg-linear-to-br from-green-500 to-green-600 text-white font-medium shadow-sm">
                   {userData.name[0].toUpperCase()}
                 </div>
                 <div className="flex items-center gap-1">
@@ -268,7 +268,7 @@ const Navbar = () => {
                 <div className="space-y-4">
                   {/* User Info */}
                   <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
-                    <div className="w-10 h-10 flex justify-center items-center rounded-full bg-gradient-to-br from-green-500 to-green-600 text-white font-medium">
+                    <div className="w-10 h-10 flex justify-center items-center rounded-full bg-linear-to-br from-green-500 to-green-600 text-white font-medium">
                       {userData.name[0].toUpperCase()}
                     </div>
                     <div className="flex-1 min-w-0">
@@ -311,6 +311,7 @@ const Navbar = () => {
                   </div>
                 </div>
               ) : (
+                
                 <button
                   onClick={() => {
                     setMobileMenuOpen(false);

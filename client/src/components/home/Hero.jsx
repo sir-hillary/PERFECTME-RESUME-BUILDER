@@ -8,7 +8,7 @@ import {
 import { AppContext } from "../../context/AppContext";
 
 const Hero = () => {
-  const { userData } = useContext(AppContext);
+  const { userData, isLoggedIn } = useContext(AppContext);
 
   const logos = [
     "https://saasly.prebuiltui.com/assets/companies-logo/instagram.svg",
@@ -47,7 +47,7 @@ const Hero = () => {
         {/* Headline + CTA */}
         <h1 className="text-5xl md:text-6xl font-semibold max-w-5xl text-center mt-4 md:leading-[70px]">
           Create Your Future with an{" "}
-          <span className="bg-gradient-to-r from-green-700 to-green-600 bg-clip-text text-transparent text-nowrap">
+          <span className="bg-linear-to-r from-green-700 to-green-600 bg-clip-text text-transparent text-nowrap">
             AI-Powered{" "}
           </span>{" "}
           Resume.
@@ -60,10 +60,10 @@ const Hero = () => {
         {/* CTA Buttons */}
         <div className="flex items-center gap-4">
           <Link
-            to={userData ? "/app" : "/app?state=register"}
+            to={userData ? "/app" : "/login"}
             className="bg-green-500 hover:bg-green-600 text-white rounded-full px-9 h-12 m-1 ring-offset-2 ring-1 ring-green-400 flex items-center transition-colors shadow-lg shadow-green-200 font-medium"
           >
-            {userData ? "Go to Dashboard" : "Build Resume"}
+            {isLoggedIn && userData ? "Go to Dashboard" : "Build Resume"}
             <ArrowRight size={16} className="ml-1" />
           </Link>
           <button className="flex items-center gap-2 border border-slate-400 hover:bg-green-50 transition rounded-full px-7 h-12 text-slate-700 font-medium">
